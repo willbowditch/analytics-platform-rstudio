@@ -2,6 +2,15 @@ machine:
   services:
     - docker
 
+dependencies:
+  cache_directories:
+    - "~/docker"
+
+  override:
+    - if [[ -e ~/docker/image.tar ]]; then docker load -i ~/docker/image.tar; fi
+    - docker build --rm=false -t quay.io/mojanalytics/rstudio .
+    - mkdir -p ~/docker; docker save quay.io/mojanalytics/rstudio > ~/docker/image.tar
+
 test:
   override:
     - echo "test"
@@ -11,6 +20,7 @@ deployment:
     branch: master
     commands:
        - docker login -u ${QUAY_USERNAME} -p ${QUAY_PASSWORD} -e ${QUAY_EMAIL} quay.io
+       - docker pull quay.io/mojanalytics/rstudio:latest
        - docker build -t quay.io/mojanalytics/rstudio:${CIRCLE_SHA1} .
        - docker tag quay.io/mojanalytics/rstudio:${CIRCLE_SHA1} quay.io/mojanalytics/rstudio:latest
        - docker push quay.io/mojanalytics/rstudio:${CIRCLE_SHA1}
