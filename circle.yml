@@ -6,7 +6,7 @@ deployment:
   production:
     branch: master
     commands:
-       - docker login -u ${QUAY_USERNAME} -p ${QUAY_PASSWORD} quay.io
+       - docker login -u ${QUAY_USERNAME} -p ${QUAY_PASSWORD} -e ${QUAY_EMAIL} quay.io
        - docker build -t quay.io/mojanalytics/rstudio:${CIRCLE_SHA1} .
        - docker tag quay.io/mojanalytics/rstudio:${CIRCLE_SHA1} quay.io/mojanalytics/rstudio:latest
        - docker push quay.io/mojanalytics/rstudio:${CIRCLE_SHA1}
