@@ -22,6 +22,6 @@ deployment:
        - docker login -u ${QUAY_USERNAME} -p ${QUAY_PASSWORD} -e ${QUAY_EMAIL} quay.io
        - docker pull quay.io/mojanalytics/rstudio:latest
        - docker build -t quay.io/mojanalytics/rstudio:${CIRCLE_SHA1} .
-       - docker tag quay.io/mojanalytics/rstudio:${CIRCLE_SHA1} quay.io/mojanalytics/rstudio:latest
+       - docker tag -f quay.io/mojanalytics/rstudio:${CIRCLE_SHA1} quay.io/mojanalytics/rstudio:latest
        - docker push quay.io/mojanalytics/rstudio:${CIRCLE_SHA1}
        - docker push quay.io/mojanalytics/rstudio:latest
