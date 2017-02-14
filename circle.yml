@@ -22,7 +22,6 @@ deployment:
     branch: master
     commands:
        - docker login -u ${QUAY_USERNAME} -p ${QUAY_PASSWORD} -e ${QUAY_EMAIL} quay.io
-       - docker pull $DOCKER_IMAGE_NAME:latest
        - docker build -t $DOCKER_IMAGE_NAME:${CIRCLE_SHA1} .
        - docker tag -f $DOCKER_IMAGE_NAME:${CIRCLE_SHA1} $DOCKER_IMAGE_NAME:latest
        - docker push $DOCKER_IMAGE_NAME:${CIRCLE_SHA1}
