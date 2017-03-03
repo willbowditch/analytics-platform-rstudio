@@ -53,6 +53,10 @@ RUN apt-get update \
   && git config --system credential.helper 'cache --timeout=3600' \
   && git config --system push.default simple
 
+# R Packages
+RUN R -e "install.packages(c('httr', 'xml2', 'base64enc', 'digest', 'curl', 'aws.signature', 'aws.s3'))"
+RUN R -e "install.packages('aws.s3', repos = c('cloudyr' = 'http://cloudyr.github.io/drat'))"
+
 RUN echo "server-access-log=1" >> /etc/rstudio/rserver.conf
 RUN echo "server-project-sharing=0" >> /etc/rstudio/rserver.conf
 RUN echo "server-health-check-enabled=1" >> /etc/rstudio/rserver.conf
