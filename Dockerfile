@@ -52,7 +52,7 @@ RUN apt-get update \
   && git config --system push.default simple
 
 # TeX Distribution: Used for PDF generation
-RUN apt-get install -y texinfo texlive
+RUN apt-get install -y texinfo texlive texlive-latex-extra
 
 # APT Cleanup
 RUN apt-get clean && rm -rf /var/lib/apt/lists/
