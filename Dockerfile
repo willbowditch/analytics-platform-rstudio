@@ -63,6 +63,8 @@ RUN R -e "install.packages(c('httr', 'xml2', 'base64enc', 'digest', 'curl', 'aws
 RUN R -e "install.packages('aws.s3', repos = c('cloudyr' = 'http://cloudyr.github.io/drat'))"
 ## Markdown
 RUN R -e "install.packages(c('evaluate', 'digest', 'formatR', 'highr', 'markdown', 'stringr', 'yaml', 'Rcpp', 'htmltools', 'caTools', 'bitops', 'knitr', 'jsonlite', 'base64enc', 'rprojroot', 'rmarkdown'))"
+## Readr
+RUN R -e "install.packages('readr')"
 
 RUN echo "server-access-log=1" >> /etc/rstudio/rserver.conf
 RUN echo "server-project-sharing=0" >> /etc/rstudio/rserver.conf
