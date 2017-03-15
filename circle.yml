@@ -5,15 +5,6 @@ machine:
     DOCKER_IMAGE_NAME: quay.io/mojanalytics/rstudio
     DOCKER_IMAGE_TAG: $(echo $CIRCLE_SHA1 | cut -c -8)
 
-dependencies:
-  cache_directories:
-    - "~/docker"
-
-  override:
-    - if [[ -e ~/docker/image.tar ]]; then docker load -i ~/docker/image.tar; fi
-    - docker build --rm=false -t $DOCKER_IMAGE_NAME .
-    - mkdir -p ~/docker; docker save $DOCKER_IMAGE_NAME > ~/docker/image.tar
-
 test:
   override:
     - echo "test"
