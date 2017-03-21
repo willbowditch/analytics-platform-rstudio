@@ -72,6 +72,7 @@ RUN echo "server-access-log=1" >> /etc/rstudio/rserver.conf
 RUN echo "server-project-sharing=0" >> /etc/rstudio/rserver.conf
 RUN echo "server-health-check-enabled=1" >> /etc/rstudio/rserver.conf
 RUN echo "auth-proxy=1" >> /etc/rstudio/rserver.conf
+RUN echo "allow-vcs=0" >> /etc/rstudio/rserver.conf
 
 COPY userconf.sh /etc/cont-init.d/conf
 
