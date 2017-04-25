@@ -75,8 +75,6 @@ RUN echo "auth-proxy=1" >> /etc/rstudio/rserver.conf
 
 RUN echo "allow-vcs=0" >> /etc/rstudio/rsession.conf
 
-COPY userconf.sh /etc/cont-init.d/conf
-
 COPY start.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/start.sh
 
