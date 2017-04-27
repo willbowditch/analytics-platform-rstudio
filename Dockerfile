@@ -54,6 +54,13 @@ RUN apt-get update \
 # TeX Distribution: Used for PDF generation
 RUN apt-get install -y texinfo texlive texlive-latex-extra
 
+# Install webshot/phantomjs for Doc/PDF with JS graphs in it
+RUN apt-get install -y bzip2
+RUN R -e "install.packages('webshot')"
+RUN R -e "webshot::install_phantomjs()"
+RUN mv /root/bin/phantomjs /usr/bin/phantomjs
+RUN chmod a+rx /usr/bin/phantomjs
+
 # APT Cleanup
 RUN apt-get clean && rm -rf /var/lib/apt/lists/
 
