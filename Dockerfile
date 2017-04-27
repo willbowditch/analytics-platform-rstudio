@@ -73,8 +73,6 @@ RUN echo "server-project-sharing=0" >> /etc/rstudio/rserver.conf
 RUN echo "server-health-check-enabled=1" >> /etc/rstudio/rserver.conf
 RUN echo "auth-proxy=1" >> /etc/rstudio/rserver.conf
 
-RUN echo "allow-vcs=0" >> /etc/rstudio/rsession.conf
-
 COPY start.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/start.sh
 
