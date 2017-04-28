@@ -62,7 +62,8 @@ RUN mv /root/bin/phantomjs /usr/bin/phantomjs
 RUN chmod a+rx /usr/bin/phantomjs
 
 # Install rJava dependencies
-RUN apt-get install default-jre default-jdk libbz2-dev libpcre3-dev --yes
+RUN apt-get install default-jre default-jdk libbz2-dev libpcre3-dev \
+  liblzma-dev libicu-dev --yes
 
 # APT Cleanup
 RUN apt-get clean && rm -rf /var/lib/apt/lists/
