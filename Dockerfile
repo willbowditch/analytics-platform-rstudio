@@ -61,6 +61,9 @@ RUN R -e "webshot::install_phantomjs()"
 RUN mv /root/bin/phantomjs /usr/bin/phantomjs
 RUN chmod a+rx /usr/bin/phantomjs
 
+# Install Java
+RUN apt-get install default-jre --yes
+
 # APT Cleanup
 RUN apt-get clean && rm -rf /var/lib/apt/lists/
 
