@@ -12,6 +12,7 @@ ENV PATH /usr/lib/rstudio-server/bin:$PATH
 ## Download and install RStudio server & dependencies
 ## Attempts to get detect latest version, otherwise falls back to version given in $VER
 ## Symlink pandoc, pandoc-citeproc so they are available system-wide
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
     file \
