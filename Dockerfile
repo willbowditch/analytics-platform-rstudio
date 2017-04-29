@@ -1,4 +1,4 @@
-FROM rocker/r-ver:3.3.2
+FROM rocker/r-ver:3.4.0
 
 ENV USER=rstudio
 # ENV USER_NAMESPACE
