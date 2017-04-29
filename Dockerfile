@@ -114,7 +114,6 @@ RUN apt-get update \
     repos = c('cloudyr' = 'http://cloudyr.github.io/drat'))" \
 
   # Install webshot/phantomjs for Doc/PDF with JS graphs in it
-  && apt-get install -y bzip2 \
   && R -e "install.packages('webshot')" \
   && R -e "webshot::install_phantomjs()" \
   && mv /root/bin/phantomjs /usr/bin/phantomjs \
