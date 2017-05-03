@@ -43,8 +43,8 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/
 
 # Install RStudio
-RUN wget -q https://download2.rstudio.org/rstudio-server-pro-1.0.136-amd64.deb \
-  && dpkg -i rstudio-server-pro-1.0.136-amd64.deb \
+RUN wget -q https://download2.rstudio.org/rstudio-server-pro-1.0.143-amd64.deb \
+  && dpkg -i rstudio-server-pro-1.0.143-amd64.deb \
   && rm rstudio-server-pro-*-amd64.deb \
 
   # Configure RStudio
