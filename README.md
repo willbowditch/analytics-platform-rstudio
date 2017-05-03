@@ -2,6 +2,8 @@
 
 RStudio Docker image for Analytics Platform
 
+[![Docker Repository on Quay](https://quay.io/repository/mojanalytics/rstudio/status "Docker Repository on Quay")](https://quay.io/repository/mojanalytics/rstudio)
+
 
 ## Tricks
 
