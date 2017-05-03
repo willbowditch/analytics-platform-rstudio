@@ -73,10 +73,7 @@ RUN wget -q https://download2.rstudio.org/rstudio-server-pro-1.0.136-amd64.deb \
     \nif(is.na(Sys.getenv("HTTR_LOCALHOST", unset=NA))) { \
     \n  options(httr_oob_default = TRUE) \
     \n}' >> /usr/local/lib/R/etc/Rprofile.site \
-  && echo '\n\
-  \nPATH="${PATH}" \
-  \nMAKE="make -j 8" \
-  \n' >> /usr/local/lib/R/etc/Renviron \
+  && echo "PATH=\"${PATH}\"" >> /usr/local/lib/R/etc/Renviron \
   && echo "r-libs-user=~/R/library" >> /etc/rstudio/rsession.conf
 
 # Install R Packages
