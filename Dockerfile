@@ -112,7 +112,7 @@ RUN R -e "install.packages(c(\
     'shiny', \
     'devtools', \
     'tidyverse', \
-    'codetools', \
+    'codetools' \
     ))" \
 
   # Install R S3 package
