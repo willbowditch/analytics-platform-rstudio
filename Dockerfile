@@ -79,7 +79,7 @@ RUN wget -q https://download2.rstudio.org/rstudio-server-pro-1.0.143-amd64.deb \
   ## Configure RStudio profile
   && echo '\n\
   \n[*] \
-  \nmax-memory-mb = 6144 \
+  \nmax-memory-mb = 12288 \
   \n' >> /etc/rstudio/profiles
 
 # Install R Packages
