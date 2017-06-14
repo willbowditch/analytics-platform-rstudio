@@ -111,7 +111,8 @@ RUN R -e "install.packages(c(\
     'readr', \
     'shiny', \
     'devtools', \
-    'tidyverse' \
+    'tidyverse', \
+    'codetools', \
     ))" \
 
   # Install R S3 package
