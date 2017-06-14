@@ -110,7 +110,8 @@ RUN R -e "install.packages(c(\
     'rmarkdown', \
     'readr', \
     'shiny', \
-    'devtools' \
+    'devtools', \
+    'tidyverse' \
     ))" \
 
   # Install R S3 package
