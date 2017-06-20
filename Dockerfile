@@ -85,39 +85,41 @@ RUN wget -q https://download2.rstudio.org/rstudio-server-pro-1.0.143-amd64.deb \
 
 # Install R Packages
 RUN R -e "install.packages(c(\
-    'httr', \
-    'xml2', \
-    'base64enc', \
-    'digest', \
-    'curl', \
-    'aws.signature', \
+    'Rcpp', \
     'aws.s3', \
-    'evaluate', \
+    'base64enc', \
+    'base64enc', \
+    'bitops', \
+    'caTools', \
+    'codetools', \
+    'curl', \
+    'devtools', \
     'digest', \
+    'digest', \
+    'evaluate', \
     'formatR', \
     'highr', \
-    'markdown', \
-    'stringr', \
-    'yaml', \
-    'Rcpp', \
     'htmltools', \
-    'caTools', \
-    'bitops', \
-    'knitr', \
+    'httr', \
     'jsonlite', \
-    'base64enc', \
-    'rprojroot', \
-    'rmarkdown', \
+    'knitr', \
+    'markdown', \
     'readr', \
+    'rmarkdown', \
+    'rprojroot', \
     'shiny', \
-    'devtools', \
+    'stringr', \
     'tidyverse', \
-    'codetools' \
+    'xml2', \
+    'yaml' \
     ))" \
 
   # Install R S3 package
-  && R -e "install.packages(c('aws.signature', 'aws.s3'), \
+  && R -e "install.packages(c('aws.s3'), \
     repos = c('cloudyr' = 'http://cloudyr.github.io/drat'))" \
+
+  # Install MOJ S3tools package
+  && R -e "devtools::install_github('moj-analytical-services/s3tools')" \
 
   # Install webshot/phantomjs for Doc/PDF with JS graphs in it
   && R -e "install.packages('webshot')" \
