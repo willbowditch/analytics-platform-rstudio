@@ -41,6 +41,7 @@ RUN apt-get update \
     libicu-dev \
     libpng-dev \
     libjpeg-dev \
+    libpoppler-cpp-dev \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/ \
   \
