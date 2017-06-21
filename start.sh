@@ -12,3 +12,4 @@ echo "AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}" >> /usr/local/lib/R/etc/Re
 echo "AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}" >> /usr/local/lib/R/etc/Renviron
 
 /usr/lib/rstudio-server/bin/rserver --server-daemonize 0
+
