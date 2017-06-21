@@ -43,9 +43,9 @@ RUN apt-get update \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/ \
   \
-  && wget -O libssl1.0.0.deb http://ftp.debian.org/debian/pool/main/o/openssl/libssl1.0.0_1.0.1t-1+deb8u6_amd64.deb \
-  && dpkg -i libssl1.0.0.deb \
-  && rm libssl1.0.0.deb
+  && wget -O libssl1.1.1.deb http://ftp.uk.debian.org/debian/pool/main/o/openssl/libssl1.1_1.1.0f-3_amd64.deb \
+  && dpkg -i libssl1.1.1.deb \
+  && rm libssl1.1.1.deb
 
 # Install RStudio
 RUN wget -q https://download2.rstudio.org/rstudio-server-pro-1.0.143-amd64.deb \
