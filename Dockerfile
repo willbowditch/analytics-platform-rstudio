@@ -40,6 +40,7 @@ RUN apt-get update \
     liblzma-dev \
     libicu-dev \
     libpng-dev \
+    libjpeg-dev \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/ \
   \
