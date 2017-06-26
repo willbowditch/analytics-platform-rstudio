@@ -40,6 +40,11 @@ RUN apt-get update \
     liblzma-dev \
     libicu-dev \
     libpng-dev \
+    libjpeg-dev \
+    libpoppler-cpp-dev \
+    libgeos-dev \
+    libgdal1-dev \
+    libproj-dev \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/ \
   \
