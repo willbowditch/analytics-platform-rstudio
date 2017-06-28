@@ -9,6 +9,9 @@ ENV TERM=xterm \
     DEBIAN_FRONTEND=noninteractive \
     PATH=/usr/lib/rstudio-server/bin:$PATH
 
+# Select Debian mirror
+RUN sed -i 's%deb.debian.org%mirror.bytemark.co.uk%' /etc/apt/sources.list
+
 # Set locale
 RUN apt-get update \
   && apt-get install -y --no-install-recommends locales \
