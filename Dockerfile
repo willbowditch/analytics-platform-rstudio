@@ -1,5 +1,7 @@
 FROM debian:stretch
 
+ENV USER=rstdio
+
 ARG PANDOC_TEMPLATES_VERSION
 ARG BUILD_DATE
 ENV PANDOC_TEMPLATES_VERSION ${PANDOC_TEMPLATES_VERSION:-1.18}
@@ -184,12 +186,6 @@ RUN R -e "install.packages(c(\
 # Configure git
 RUN git config --system credential.helper 'cache --timeout=3600' \
   && git config --system push.default simple
-
-RUN useradd rstudio \
-    && echo "rstudio:rstudio" | chpasswd \
-    && mkdir /home/rstudio \
-    && chown rstudio:rstudio /home/rstudio \
-    && addgroup rstudio staff
 
 COPY start.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/start.sh

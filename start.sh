@@ -3,7 +3,9 @@ set -ex
 
 GROUP=staff
 USER_UID=1001
-USER=rstdio
+
+useradd -g $GROUP -u $USER_UID -d /home/$USER $USER
+echo "${USER}:${USER}" | chpasswd
 
 if [ -z "$NO_AUTH_PROXY" ]; then
     echo "auth-proxy=1" >> /etc/rstudio/rserver.conf
