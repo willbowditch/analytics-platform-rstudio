@@ -184,6 +184,8 @@ RUN R -e "install.packages(c(\
 RUN git config --system credential.helper 'cache --timeout=3600' \
   && git config --system push.default simple
 
+RUN echo "rstudio:rstudio" | chpasswd
+
 COPY start.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/start.sh
 
