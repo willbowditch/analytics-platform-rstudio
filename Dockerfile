@@ -62,7 +62,6 @@ RUN wget -q https://download2.rstudio.org/rstudio-server-pro-1.0.143-amd64.deb \
   \nserver-access-log=1 \
   \nserver-project-sharing=0 \
   \nserver-health-check-enabled=1 \
-  \nauth-proxy=1 \
   \n' >> /etc/rstudio/rserver.conf \
 
   # Install pandoc
@@ -96,6 +95,7 @@ RUN wget -q https://download2.rstudio.org/rstudio-server-pro-1.0.143-amd64.deb \
 RUN R -e "install.packages(c(\
     'Rcpp', \
     'aws.s3', \
+    'aws.signature', \
     'base64enc', \
     'base64enc', \
     'bitops', \
@@ -124,7 +124,7 @@ RUN R -e "install.packages(c(\
     ))" \
 
   # Install R S3 package
-  && R -e "install.packages(c('aws.s3'), \
+  && R -e "install.packages(c('aws.signature', 'aws.s3'), \
     repos = c('cloudyr' = 'http://cloudyr.github.io/drat'))" \
 
   # Install MOJ S3tools package
