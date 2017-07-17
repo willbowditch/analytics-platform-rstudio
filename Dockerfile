@@ -1,6 +1,6 @@
 FROM debian:stretch
 
-ENV USER=rstdio
+ENV USER=rstudio
 
 ARG PANDOC_TEMPLATES_VERSION
 ARG BUILD_DATE
