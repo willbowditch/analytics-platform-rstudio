@@ -100,9 +100,9 @@ RUN apt-get update \
   && rm libssl1.0.0.deb
 
 # Install RStudio
-RUN wget -q https://download2.rstudio.org/rstudio-server-pro-1.0.143-amd64.deb \
-  && dpkg -i rstudio-server-pro-1.0.143-amd64.deb \
-  && rm rstudio-server-pro-*-amd64.deb \
+RUN wget -q https://download2.rstudio.org/rstudio-server-1.0.143-amd64.deb \
+  && dpkg -i rstudio-server-1.0.143-amd64.deb \
+  && rm rstudio-server-*-amd64.deb \
 
   # Configure RStudio
   && echo '\n\
