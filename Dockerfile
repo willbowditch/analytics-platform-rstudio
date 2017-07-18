@@ -104,13 +104,6 @@ RUN wget -q https://download2.rstudio.org/rstudio-server-1.0.143-amd64.deb \
   && dpkg -i rstudio-server-1.0.143-amd64.deb \
   && rm rstudio-server-*-amd64.deb \
 
-  # Configure RStudio
-  && echo '\n\
-  \nserver-access-log=1 \
-  \nserver-project-sharing=0 \
-  \nserver-health-check-enabled=1 \
-  \n' >> /etc/rstudio/rserver.conf \
-
   # Install pandoc
   && ln -s /usr/lib/rstudio-server/bin/pandoc/pandoc /usr/local/bin \
   && ln -s /usr/lib/rstudio-server/bin/pandoc/pandoc-citeproc /usr/local/bin \
